@@ -1,0 +1,24 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Evolve"
+theme = "hugo-theme-learn"
+
+[params]
+editURL = "https://github.com/lecaillon/Evolve.Doc/edit/master/content/"
+description = "Documentation for Evolve"
+author = "Philippe Lécaillon"
+showVisitedLinks = true
+themeVariant = "blue"
+disableShortcutsTitle = false
+ordersectionsby = "weight"
+disableSearch = false
+disableAssetsBusting = false
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[[Languages.en.menu.shortcuts]] 
+name = "<i class='fa fa-github'></i> Github repo"
+identifier = "ds"
+url = "https://github.com/lecaillon/Evolve"
+weight = 10
