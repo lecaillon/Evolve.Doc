@@ -1,8 +1,7 @@
 ---
-title Home
-draft false
-chapter false
+title: "Home"
+draft: false
+chapter: false
 ---
 
 ### What is Evolve ?
-
