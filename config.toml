@@ -7,7 +7,7 @@ theme = "hugo-theme-learn"
 editURL = "https://github.com/lecaillon/Evolve.Doc/edit/master/content/"
 description = "Documentation for Evolve"
 author = "Philippe Lécaillon"
-showVisitedLinks = true
+showVisitedLinks = false
 themeVariant = "blue"
 disableShortcutsTitle = false
 ordersectionsby = "weight"
@@ -22,3 +22,13 @@ name = "<i class='fa fa-github'></i> Github repo"
 identifier = "ds"
 url = "https://github.com/lecaillon/Evolve"
 weight = 10
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fa fa-envelope-o'></i> Contact"
+url = "/contact"
+weight = 20
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fa fa-bullhorn'></i> Credits"
+url = "/credits"
+weight = 30
