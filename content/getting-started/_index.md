@@ -9,7 +9,11 @@ icon: ""
 
 ### Installation
 
-Coming soon...
+Evolve is available as a single [NuGet package](https://www.nuget.org/packages/Evolve).
+
+```
+Install-Package Evolve
+```
 
 ### Quick Start
 
