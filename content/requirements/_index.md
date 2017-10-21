@@ -14,8 +14,6 @@ icon: ""
 - .NET Core 1.0+
 - .NET Core 2.0+
 
-{{% notice tip %}} In your .csproj add <LangVersion>latest</LangVersion> to allow the async Task Main method. {{% /notice %}}
-
 ### Supported databases
 
 - PostgreSQL
