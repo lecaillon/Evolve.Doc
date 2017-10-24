@@ -16,7 +16,8 @@ icon: ""
 
 ### Supported databases
 
-- PostgreSQL
-- SQLite
-- SQL Server
-- MySQL / MariaDB
+- [PostgreSQL](/requirements/postgresql/)
+- [SQLite](/requirements/sqlite/)
+- [SQL Server](/requirements/sqlserver/)
+- [MySQL](/requirements/mysql/)
+- [MariaDB](/requirements/mariadb/)
