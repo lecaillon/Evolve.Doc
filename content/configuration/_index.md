@@ -31,6 +31,7 @@ You can set all the options in the config file or directly access them  via prop
 | Evolve.Placeholder. | No |  | Placeholders are strings prefixed by: "Evolve.Placeholder." to replace in sql migrations. |
 | Evolve.TargetVersion | No |  | Target version to reach. If empty it evolves all the way up. |
 | Evolve.StartVersion | No | 0 | Version used as starting point for already existing databases. If empty, start version = 0. |
-| Evolve.EnableClusterMode | No | true | When true, Evolve will use a session level lock to coordinate the migrations on multiple nodes. |
+| Evolve.EnableClusterMode  | No | true | When true, Evolve will use a session level lock to coordinate the migrations on multiple nodes. This prevents two distinct Evolve executions from executing an Evolve command on the same database at the same time. |
+| Evolve.OutOfOrder | No | false | Allows migrations to be run "out of order". If you already have versions 1 and 3 applied, and now a version 2 is found, it will be applied too instead of being ignored. |
 
 <span style=color:red>*</span> *Only required in [MSBuild mode](/execution-modes/#msbuild-dotnet-build).*
