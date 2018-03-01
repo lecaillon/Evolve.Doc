@@ -9,5 +9,5 @@ icon: "/images/SQLite.png"
 - SQLite3
 
 ### Drivers
-- System.Data.SQLite
-- Microsoft.Data.Sqlite
+- System.Data.SQLite (*.NET only*)
+- Microsoft.Data.Sqlite (*.NET Core only*)
