@@ -17,15 +17,15 @@ Install-Package Evolve
 
 ### Quick Start
 
-Evolve can use 2 different execution modes: [**MSBuild**](/getting-started/#msbuild-mode) or [**In-App**](/getting-started/#in-app-mode). Whatever you choose, you will have to:
+Evolve can use 2 different (but complementary) execution modes: [**MSBuild**](/getting-started/#msbuild-mode) or [**In-App**](/getting-started/#in-app-mode). Whatever you choose first, you will have to:
 
-<i class="fa fa-hand-o-right"></i> Create at least one folder at the root of your project for your sql files (*Sql_Scripts* for example).
+<i class="fa fa-hand-o-right"></i> Create at least one folder at the root of your project for your sql files.
 
-<i class="fa fa-hand-o-right"></i> Name your sql files following a strict pattern described [here](/configuration/#naming-pattern).
+<i class="fa fa-hand-o-right"></i> Name your sql files following the pattern described [here](/configuration/#naming-pattern). For example: `V1_3_1__Create_table.sql`
 
 #### MSBuild mode
 
-**It is the recommanded mode in development and CI**. Evolve will be executed at build time. And if the migration fails, the entire MSBuild process is stopped in error. 
+**This mode is recommanded for development and CI**. Evolve will be executed at build time. And if the migration fails, the entire MSBuild process is stopped in error. 
 
 ##### .NET project
 
@@ -42,7 +42,7 @@ To configure Evolve in a .NET project, use your project configuration file (`app
 
 ##### .NET Core project
 
-To configure Evolve in a .NET Core project, add the `evolve.json` file at the root of your project with at least those variables:
+To configure Evolve in a .NET Core project, add a new `evolve.json` file at the root of your project with at least those variables:
 
 ```json
 {
@@ -76,4 +76,4 @@ catch (Exception ex)
 }
 ```
 
-<i class="fa fa-hand-o-right"></i> For a complete list of options you can use in the configuration file please refer to this [chapter] (/configuration/#options).
+<i class="fa fa-hand-o-right"></i> For a complete list of options you can set in the configuration file, please refer to this [chapter] (/configuration/#options).

@@ -7,5 +7,5 @@ weight: 4
 icon: ""
 ---
 
-Coming soon...
-what is a migration ?
+
+In Evolve, each sql script is called a migration. A migration is composed of a unique version and an informative description. 

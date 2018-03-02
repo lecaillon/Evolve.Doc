@@ -27,7 +27,7 @@ You can set all the options in the config file or configure them directly in you
 | Evolve.Driver | Yes <span style=color:red>*</span> |  | One of the following supported drivers: <ul><li>Npgsql</li><li>Microsoft.Data.Sqlite</li><li>System.Data.SQLite</li><li>SqlClient (SQL Server)</li><li>MySql.Data</li></ul> |
 | Evolve.Locations | Yes | Sql_Scripts | Paths (separated by semicolon) to scan recursively for migrations |
 | Evolve.EraseDisabled | No |  | When true, ensures that Evolve will never erase schemas. **Highly recommended in production.** |
-| Evolve.Command | No | | <ul><li>**migrate**: migrates the database</li><li>**erase**: erases the database schema(s) Evolve has created or has found it empty</li><li>**repair**: corrects checksums of applied migrations, with the ones from migration scripts</li><li>**When empty Evolve does nothing.**</li></ul> |
+| Evolve.Command | No | | <ul><li>**migrate**: migrates the database</li><li>**erase**: erases the database schema(s) Evolve has created or has found it empty</li><li>**repair**: corrects checksums of applied migrations, with the ones from migration scripts</li></br><li>**when empty Evolve does nothing.**</li></ul> |
 | Evolve.CommandTimeout | No |  | The time in seconds to wait for the migration to execute before terminating the command and generating an error. |
 | Evolve.Schemas | No |  | A semicolon separated list of schema managed by Evolve.  If empty, the default schema for the datasource connection is used. |
 | Evolve.EraseOnValidationError | No |  | When true, if validation phase fails, Evolve will erase the database schemas and will re-execute migration scripts from scratch. **Intended to be used in development only.** |
