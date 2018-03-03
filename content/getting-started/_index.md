@@ -63,7 +63,7 @@ try
     var cnx = new SqliteConnection(Configuration.GetConnectionString("MyDatabase"));
     var evolve = new Evolve.Evolve(cnx, msg => _logger.LogInformation(msg))
     {
-        Locations = new List<string> { "scripts/migrations" },
+        Locations = new List<string> { "db/migrations" },
         IsEraseDisabled = true,
     };
 

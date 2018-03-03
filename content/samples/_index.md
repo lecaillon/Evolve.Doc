@@ -9,7 +9,9 @@ icon: ""
 
 ### ASP.NET Core sample
 
-This sample targetting ASP.NET Core 2 and available [here](https://github.com/lecaillon/Evolve/tree/master/samples/AspNetCoreSample), demonstrates how to use Evolve to have a test database with specific datasets for your development environment, your CI and to keep up-to-date the production database at runtime.
+This sample demonstrates how to use Evolve to have a test database with specific datasets for your development environment, your CI and to keep up-to-date the production database at runtime.
+
+<i class="fa fa-hand-o-right"></i> You can find this sample on [GitHub](https://github.com/lecaillon/Evolve/tree/master/samples/AspNetCoreSample)
 
 #### Key points
 
