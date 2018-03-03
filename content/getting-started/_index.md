@@ -25,7 +25,7 @@ Evolve can use 2 different (but complementary) execution modes: [**MSBuild**](/g
 
 #### MSBuild mode
 
-**This mode is recommanded for development and CI**. Evolve will be executed at build time. And if the migration fails, the entire MSBuild process is stopped in error. 
+**This mode is recommanded for development and CI**. Evolve will be executed at build time and automatically ensure your database is up-to-date. If the migration fails, the entire MSBuild process is stopped in error.
 
 ##### .NET project
 
