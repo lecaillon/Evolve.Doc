@@ -9,10 +9,10 @@ icon: ""
 
 ### Naming pattern
 
-To be processed by Evolve your migration scripts must follow this file name structure: *V1_3_1__Create_table.sql*:
+To be processed by Evolve your migration scripts must follow this file name structure: *V1_3_1_1__Create_table.sql*:
 
 - **prefix**: configurable, default: **V**
-- **version**: numbers separated by _ (one underscore)
+- **version**: numbers separated by **_** (one underscore)
 - **separator**: configurable, default: **__** (two underscores)
 - **description**: words separated by underscores
 - **suffix**: configurable, default: **.sql** 

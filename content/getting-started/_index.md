@@ -21,7 +21,7 @@ Evolve can use 2 different (but complementary) execution modes: [**MSBuild**](/g
 
 <i class="fa fa-hand-o-right"></i> Create at least one folder at the root of your project for your sql files.
 
-<i class="fa fa-hand-o-right"></i> Name your sql files following the pattern described [here](/configuration/#naming-pattern). For example: `V1_3_1__Create_table.sql`
+<i class="fa fa-hand-o-right"></i> Name your sql files following the pattern described [here](/configuration/#naming-pattern). For example: `V1_3_1_1__Create_table.sql`
 
 #### MSBuild mode
 

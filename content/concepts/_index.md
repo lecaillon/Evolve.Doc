@@ -9,35 +9,29 @@ icon: ""
 
 ### Overview
 
-In Evolve, each sql script is called a **migration**. A migration is composed of an unique version, an informative description and a checksum.
+In Evolve, each sql script is called a **migration**. A migration is composed of a unique version, an informative description and a checksum.
 
-At startup Evolve will collect all migrations that are in the configured directories (cf. [Evolve.Locations](/configuration/#options)) searching recursively for files with a specific file name structure. All files are then sorted by version in ascending order, regardless their initial directory. **Each version of a migration must be unique**. If not, the validation phase fails.
+At startup Evolve will collect all migrations located in [Evolve.Locations](/configuration/#options), searching recursively for files with a specific file name structure. All files are then sorted by version in ascending order, regardless their initial directory. **Each version of a migration must be unique**. If not, the validation phase fails.
 
-Once executed, the name and the checksum of the migration is saved in the Evolve metadata table in your database (changelog by default). This table is checked everytime Evolve is run, to see if the migration script has already been executed.
+Once executed, the name and the checksum of the migration is saved in the Evolve metadata table in your database. This table is checked everytime Evolve is run, to see if the migration script has already been applied.
 
 ### Migration
 
 A migration is composed of a *version*, a *description* and a *checksum*.
 
-#### Version
+<i class="fa fa-hand-o-right"></i> The version must be unique. Migrations are applied in the order of their versions. *The first numbers that make up the version of your migration may be the release version of your application followed by a counter.*
 
-The version must be unique. It is used to ordered the execution of migrations. *The first numbers that make up the version of your migration may be the release version of your application followed by a counter.*
-
-To be processed by Evolve your migration scripts must follow this file name structure: *V1_3_1__Create_table.sql*:
+To be processed by Evolve your migration scripts must follow this file name structure: *V1_3_1_1__Create_table.sql*:
 
 - **prefix**: configurable, default: **V**
-- **version**: numbers separated by _ (one underscore)
+- **version**: numbers separated by **_** (one underscore)
 - **separator**: configurable, default: **__** (two underscores)
 - **description**: words separated by underscores
 - **suffix**: configurable, default: **.sql** 
 
-#### Description
+<i class="fa fa-hand-o-right"></i> The description is informative and allow you to remember what the migration was about.
 
-The description is informative and allow you to remember what the migration was about.
-
-#### Checksum
-
-The checksum is stored in the Evolve metadatatable and used to detect accidental changes.
+<i class="fa fa-hand-o-right"></i> The checksum is stored in the Evolve metadatatable and used to detect accidental changes.
 
 ### Transactions
 
@@ -58,3 +52,10 @@ SELECT * FROM ${database}.${schema1}.TABLE_1; -- SELECT * FROM my_db.my_schema.T
 
 ### Metadata table
 
+At first execution Evolve creates a table called **changelog** by default, to keep track of all migrations (applied or failed) and to store their checksums. Example:
+
+| id | type | version | description | name | checksum | installed_by | installed_on | success |
+|----|:----:|---------|-------------|------|----------|-------------|--------------|:-------:|
+| 1 | 2 | 0 | Empty schema found: dbo. | dbo | | sa | 22/02/2018 20:45:15 | True |
+| 2 | 0 | 1.0.0.0 | create table calendrier and constraints | V1_0_0_0__create_table_calendrier_and_constraints.sql | D4AAF08FBF70D3B327A9A3D3B4E0E21A | sa | 22/02/2018 20:45:15 | True |
+| 3 | 0 | 1.0.0.1 | create triggers | V1_0_0_1__create_triggers.sql | A4AA367C92B99C56E881324726882B9B | sa | 22/02/2018 20:45:16 | True |
