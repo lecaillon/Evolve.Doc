@@ -13,6 +13,7 @@ disableShortcutsTitle = false
 ordersectionsby = "weight"
 disableSearch = false
 disableAssetsBusting = false
+googleAnalytics = "UA-115057388-1"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
