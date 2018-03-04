@@ -7,4 +7,6 @@ weight: 6
 icon: ""
 ---
 
-Coming soon...
+- Can I modify the content of a migration after it has been applied ?
+
+
