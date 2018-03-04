@@ -59,3 +59,28 @@ At first execution Evolve creates a table called **changelog** by default, to ke
 | 1 | 2 | 0 | Empty schema found: dbo. | dbo | | sa | 22/02/2018 20:45:15 | True |
 | 2 | 0 | 1.0.0.0 | create table calendrier and constraints | V1_0_0_0__create_table_calendrier_and_constraints.sql | D4AAF08FBF70D3B327A9A3D3B4E0E21A | sa | 22/02/2018 20:45:15 | True |
 | 3 | 0 | 1.0.0.1 | create triggers | V1_0_0_1__create_triggers.sql | A4AA367C92B99C56E881324726882B9B | sa | 22/02/2018 20:45:16 | True |
+
+
+### MSBuild task
+
+Evolve NuGet installation adds a new post build MSBuild task to your project. This task is automatically executed after a successful build and starts the Evolve command (cf. Evolve.Command in the [options](/configuration/#options)) defined in your configuration file, if one is found. If the command fails, the entire MSBuild process is stopped in error.
+
+Here is the .NET version of the `Evolve.targets` file:
+
+```xml
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask TaskName="Evolve.MsBuild.EvolveBoot" AssemblyFile="$([MSBuild]::Unescape($(TargetDir)\Evolve.dll))" />
+  <Target Name="SqlMigration" AfterTargets="Build">
+    <Message Condition="!Exists('Web.config') AND !Exists('App.config')" Importance="High" Text="Evolve MSBuild mode is off: no configuration file found." />
+    <EvolveBoot Condition="Exists('Web.config') OR Exists('App.config')" 
+                TargetPath="$([MSBuild]::Unescape($(TargetPath)))" 
+                ProjectDir="$([MSBuild]::Unescape($(ProjectDir)))" 
+                EvolveNugetPackageBuildDir="$([MSBuild]::Unescape($(MSBuildThisFileDirectory)))" 
+                IsDotNetStandardProject="false" 
+                MSBuildExtensionsPath="$([MSBuild]::Unescape($(MSBuildExtensionsPath)))" 
+                Configuration="$(Configuration)" />
+  </Target>
+</Project>
+```
+
+<i class="fa fa-hand-o-right"></i> If the option **Evolve.Command** is null or empty, the MSBuild task does nothing. 
