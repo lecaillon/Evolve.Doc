@@ -13,7 +13,7 @@ In Evolve, each sql script is called a **migration**. A migration is composed of
 
 At startup Evolve will collect all migrations located in [Evolve.Locations](/configuration/#options), searching recursively for files with a specific file name structure. All files are then sorted by version in ascending order, regardless their initial directory. **Each version of a migration must be unique**. If not, the validation phase fails.
 
-Once executed, the name and the checksum of the migration is saved in the Evolve metadata table in your database. This table is checked everytime Evolve is run, to see if the migration script has already been applied.
+Once executed, the name and checksum of the migration are saved to a metadata table in your database. This table is checked every time Evolve is run, to see if the migration script has already been applied.
 
 ### Migration
 
@@ -26,7 +26,7 @@ To be processed by Evolve your migration scripts must follow this file name stru
 - **prefix**: configurable, default: **V**
 - **version**: numbers separated by **_** (one underscore)
 - **separator**: configurable, default: **__** (two underscores)
-- **description**: words separated by underscores
+- **description**: words separated by single underscores
 - **suffix**: configurable, default: **.sql** 
 
 <i class="fa fa-hand-o-right"></i> The description is informative and allow you to remember what the migration was about.
@@ -37,15 +37,15 @@ To be processed by Evolve your migration scripts must follow this file name stru
 
 Evolve has 3 execution commands to interact with your database:
 
-<i class="fa fa-hand-o-right"></i> **migrate**: apply the migrations. It's the main command. 
+<i class="fa fa-hand-o-right"></i> **migrate**: applies the migrations. It's the main command. 
 
 <i class="fa fa-hand-o-right"></i> **erase**: erases the database schema(s) if Evolve has created it or has found it empty (cf. [Metadata table](#metadata-table)). Otherwise Evolve will not do anything. This command is intended to be use in development to start with a new clean database.
 
-<i class="fa fa-hand-o-right"></i> **repair**: corrects checksums of already applied migrations, with the ones from actual migration scripts.
+<i class="fa fa-hand-o-right"></i> **repair**: updates checksums of previously applied migrations with those of the currently available migration scripts.
 
 ### Transactions
 
-Each migration is executed in a separate database transaction. Thus each script will either succeed or fail completely and Evolve will stop on the first error. If your database supports DDL statements within a transaction, failed migrations will always be rolled back, otherwise you will have to manually cleanup the mess.
+Each migration is executed in a separate database transaction. Thus each script will either succeed or fail completely and Evolve will stop on the first error. If your database supports DDL statements within a transaction, failed migrations will always be rolled back, otherwise you will have to manually fix your database state.
 
 ### Placeholders
 
@@ -62,7 +62,7 @@ SELECT * FROM ${database}.${schema1}.TABLE_1; -- SELECT * FROM my_db.my_schema.T
 
 ### Metadata table
 
-At first execution Evolve creates a table called **changelog** by default, to keep track of all migrations (applied or failed) and to store their checksums. Example:
+During its initial execution, Evolve creates a table with a default name of **changelog**, to keep track of all migrations (applied or failed) and to store their checksums. Example:
 
 | id | type | version | description | name | checksum | installed_by | installed_on | success |
 |----|:----:|---------|-------------|------|----------|-------------|--------------|:-------:|
@@ -73,15 +73,15 @@ At first execution Evolve creates a table called **changelog** by default, to ke
 <i class="fa fa-hand-o-right"></i> The `type` column is used to identify which type of metadata is stored:
 
 - 0: migration
-- 1: new shema. Used by Evolve to save that it created the schema and thus can **drop** it if `Evolve.Command = "erase"`.
-- 2: empty schema. Used by Evolve to save that the schema was empty before it applied the first migration and thus can **erase** it if `Evolve.Command = "erase"`. 
+- 1: new schema. Indicates that Evolve created the schema and thus can **drop** it if `Evolve.Command = "erase"`.
+- 2: empty schema. Indicates that the schema was empty before Evolve applied the first migration and thus can **erase** it if `Evolve.Command = "erase"`. 
 - 3: start version. Used by Evolve to store the version from which to take migrations (cf. `Evolve.StartVersion`).
 
 ### MSBuild task
 
-Evolve NuGet installation adds a new post build MSBuild task to your project. This task is automatically executed after a successful build and starts the Evolve command (cf. Evolve.Command in the [options](/configuration/#options)) defined in your configuration file, if one is found. If the command fails, the entire MSBuild process is stopped in error.
+Evolve NuGet installation adds a new post-build MSBuild task to your project. This task is automatically executed after a successful build and starts the Evolve command (cf. Evolve.Command in the [options](/configuration/#options)) defined in your configuration file, if one is found. If the command fails, the entire MSBuild process is stopped with an error.
 
-Here is the .NET version of the `Evolve.targets` file:
+Here is the .NET Framework version of the `Evolve.targets` file:
 
 ```xml
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">

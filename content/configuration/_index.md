@@ -14,7 +14,7 @@ To be processed by Evolve your migration scripts must follow this file name stru
 - **prefix**: configurable, default: **V**
 - **version**: numbers separated by **_** (one underscore)
 - **separator**: configurable, default: **__** (two underscores)
-- **description**: words separated by underscores
+- **description**: words separated by single underscores
 - **suffix**: configurable, default: **.sql** 
 
 ### Options
