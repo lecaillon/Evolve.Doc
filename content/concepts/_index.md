@@ -81,7 +81,7 @@ At first execution Evolve creates a table called **changelog** by default, to ke
 
 Evolve NuGet installation adds a new post build MSBuild task to your project. This task is automatically executed after a successful build and starts the Evolve command (cf. Evolve.Command in the [options](/configuration/#options)) defined in your configuration file, if one is found. If the command fails, the entire MSBuild process is stopped in error.
 
-Here is the .NET version of the `Evolve.targets` file:
+Here is the .NET Framework version of the `Evolve.targets` file:
 
 ```xml
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">

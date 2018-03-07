@@ -27,9 +27,9 @@ Evolve can use 2 different (but complementary) execution modes: [**MSBuild**](/g
 
 **This mode is recommanded for development and CI**. Evolve will be executed at build time and automatically ensure your database is up-to-date. If the migration fails, the entire MSBuild process is stopped in error.
 
-##### .NET project
+##### .NET Framework project
 
-To configure Evolve in a .NET project, use your project configuration file (`app.config` or `web.config`) with at least those variables:
+To use Evolve in a .NET Framework project, add the following minimum configuration to your `app.config` or `web.config` file:
 
 ```xml
 <appSettings>
