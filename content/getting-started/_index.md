@@ -17,7 +17,7 @@ Install-Package Evolve
 
 ### Quick Start
 
-Evolve can use 2 different (but complementary) execution modes: [**MSBuild**](/getting-started/#msbuild-mode) or [**In-App**](/getting-started/#in-app-mode). Whatever you choose first, you will have to:
+Evolve can use 2 different (but complementary) execution modes: [**MSBuild**](/getting-started/#msbuild-mode) or [**In-App**](/getting-started/#in-app-mode). Whichever approach you choose, you will first need to:
 
 <i class="fa fa-hand-o-right"></i> Create at least one folder at the root of your project for your sql files.
 
@@ -25,7 +25,7 @@ Evolve can use 2 different (but complementary) execution modes: [**MSBuild**](/g
 
 #### MSBuild mode
 
-**This mode is recommanded for development and CI**. Evolve will be executed at build time and automatically ensure your database is up-to-date. If the migration fails, the entire MSBuild process is stopped in error.
+**This mode is recommended for development and CI**. Evolve will be executed at build time and automatically ensure that your database is up-to-date. If the migration fails, the MSBuild process will stop with an error.
 
 ##### .NET Framework project
 
@@ -42,7 +42,7 @@ To use Evolve in a .NET Framework project, add the following minimum configurati
 
 ##### .NET Core project
 
-To configure Evolve in a .NET Core project, add a new `evolve.json` file at the root of your project with at least those variables:
+To use Evolve in a .NET Core project, add a new `evolve.json` file at the root of your project with the following minimum configuration:
 
 ```json
 {
@@ -55,7 +55,7 @@ To configure Evolve in a .NET Core project, add a new `evolve.json` file at the 
 
 #### In-app mode
 
-In this mode Evolve will be executed at runtime. **It is the recommanded way to update the database in production**.
+In this mode Evolve will be executed at runtime. **It is the recommended way to update the database in production**.
 
 ```C#
 try
