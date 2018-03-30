@@ -21,3 +21,4 @@ icon: ""
 - [SQL Server](/requirements/sqlserver/)
 - [MySQL](/requirements/mysql/)
 - [MariaDB](/requirements/mariadb/)
+- [Cassandra](/requirements/cassandra/)
