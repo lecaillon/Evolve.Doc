@@ -23,3 +23,9 @@ Yes! The option `Evolve.ConnectionString` can also be the name of a key in a con
 ##### Can I provide configuration via environment variables ?
 
 Yes! Use this syntax for your environment variables: `${DB_PWD}`
+
+##### Is it possible to disable the MS Build task ?
+
+Yes!
+- For .NET Core projects, do not add any `evolve.json` file in your solution.
+- For .NET projects, do not add any Evolve.* keys in `<appSettings>` or let the `Evolve.Command` value empty.
