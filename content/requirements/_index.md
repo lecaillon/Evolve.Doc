@@ -13,6 +13,7 @@ icon: ""
 - .NET 4.5.2+
 - .NET Core 1.0+
 - .NET Core 2.0+
+- .NET Core 2.1+
 
 ### Supported databases
 

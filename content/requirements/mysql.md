@@ -10,6 +10,7 @@ icon: "/images/MySQL.png"
 
 ### Drivers
 - MySql.Data (Oracle)
+- [MySqlConnector](https://mysql-net.github.io/MySqlConnector/)
 
 ### Limitations
 > The DELIMITER keyword is not supported in the sql scripts.
