@@ -76,4 +76,14 @@ catch (Exception ex)
 }
 ```
 
+<i class="fa fa-hand-o-right"></i> Make sure to set the property `Copy to output directory` to **Copy always** on each of your sql file, or modify your csproj file to automatically copy all the SQL files to the output build folder:
+
+```xml
+<ItemGroup>
+  <Content Include="Sql_Scripts\**\*.sql">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </Content>
+</ItemGroup>
+```
+
 <i class="fa fa-hand-o-right"></i> For a complete list of options you can set in the configuration file, please refer to this [chapter] (/configuration/#options).
