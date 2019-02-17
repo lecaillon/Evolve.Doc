@@ -18,7 +18,7 @@ Currently, we provide Evolve.CLI binaries for the following x64 architecture:
 
 ### Installation
 
-Download the appropriate version for your platform from [Evolve Releases](https://github.com/lecaillon/Evolve/releases). 
+Download the appropriate version for your platform from Evolve [releases](https://github.com/lecaillon/Evolve/releases). 
 
 ### Command structure
 
