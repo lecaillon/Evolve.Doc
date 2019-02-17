@@ -6,11 +6,7 @@ icon: "/images/Cassandra.png"
 ---
 
 ### Versions
-- 1.2+ of Cassandra with CQL v3 (dependent on the driver, see below)
-
-### Drivers
-- [CassandraCSharpDriver](https://github.com/datastax/csharp-driver)
-  - Evolve uses the [ADO.NET capabilities of the drivers](https://github.com/datastax/csharp-driver/tree/master/src/Cassandra/Data); it is not recommended to use it, but it is good enough for our purpose with Evolve.
+- 1.2+ of Cassandra with CQL v3
 
 ### Limitations
 

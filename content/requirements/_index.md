@@ -10,10 +10,8 @@ icon: ""
 ### Supported frameworks
 
 - .NET 3.5+
-- .NET 4.5.2+
-- .NET Core 1.0+
-- .NET Core 2.0+
-- .NET Core 2.1+
+- .NET 4.6.1+
+- .NET Standard 2.0
 
 ### Supported databases
 

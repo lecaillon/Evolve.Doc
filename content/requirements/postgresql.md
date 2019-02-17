@@ -8,9 +8,6 @@ icon: "/images/PostgreSQL.png"
 ### Versions
 - 9.0 and later
 
-### Drivers
-- Npgsql 3, Npgsql 4
-
 ### Limitations
 > Instructions that do not support being embedded in a transaction are not yet supported in migration scripts:
 

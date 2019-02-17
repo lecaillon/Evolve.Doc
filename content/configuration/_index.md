@@ -7,7 +7,7 @@ weight: 3
 icon: ""
 ---
 
-### Naming pattern
+### Migration naming pattern
 
 To be processed by Evolve your migration scripts must follow this file name structure: *V1_3_1_1__Create_table.sql*:
 
@@ -19,15 +19,13 @@ To be processed by Evolve your migration scripts must follow this file name stru
 
 ### Options
 
-You can set all the options in the config file or configure them directly in your code (cf. [In-App mode](/execution-modes/#in-app)).
+_Note that you can also use them through your config file if you use [Evolve.MSBuild](/msbuild)_
 
 | Name | Required | Default | Description |
 |-------------------------------|:--------:|:-----------:|-------------------------------------------------------------------|
-| Evolve.ConnectionString | Yes <span style=color:red>*</span> |  | The connection string to the database (can also be the name of a key in a connectionStrings section of your config file). Must have the necessary privileges to execute ddl. |
-| Evolve.Driver | Yes <span style=color:red>*</span> |  | One of the following supported drivers: <ul><li>Npgsql</li><li>Microsoft.Data.Sqlite</li><li>System.Data.SQLite</li><li>SqlClient (SQL Server)</li><li>MySql.Data</li></ul> |
 | Evolve.Locations | Yes | Sql_Scripts | Paths (separated by semicolon) to scan recursively for migrations |
 | Evolve.EraseDisabled | No |  | When true, ensures that Evolve will never erase schemas. **Highly recommended in production.** |
-| Evolve.Command | No | | <ul><li>**migrate**: apply the migrations</li><li>**erase**: erases the database schema(s) if Evolve has created it or has found it empty</li><li>**repair**: corrects checksums of already applied migrations, with the ones from actual migration scripts</li></br><li>**when empty Evolve does nothing.**</li></ul> |
+| Evolve.Command | No | | <ul><li>**migrate**: applies the migrations</li><li>**erase**: erases the database schema(s) if Evolve has created it or has found it empty</li><li>**repair**: corrects checksums of already applied migrations, with the ones from actual migration scripts</li></br><li>**when empty Evolve does nothing.**</li></ul> |
 | Evolve.CommandTimeout | No |  | The time in seconds to wait for the migration to execute before terminating the command and generating an error. |
 | Evolve.Schemas | No |  | A semicolon separated list of schema managed by Evolve.  If empty, the default schema for the datasource connection is used. |
 | Evolve.EraseOnValidationError | No |  | When true, if validation phase fails, Evolve will erase the database schemas and will re-execute migration scripts from scratch. **Intended to be used in development only.** |
@@ -44,5 +42,3 @@ You can set all the options in the config file or configure them directly in you
 | Evolve.PlaceholderSuffix | No | } | The suffix of the placeholders. |
 | Evolve.Placeholder. | No |  | Placeholders are strings prefixed by: "Evolve.Placeholder." to replace in sql migrations. |
 | Evolve.EnableClusterMode  | No | true | When true, Evolve will use a session level lock to coordinate the migrations on multiple nodes. This prevents two distinct Evolve executions from executing an Evolve command on the same database at the same time. |
-
-<span style=color:red>*</span> *Only required in [MSBuild mode](/execution-modes/#msbuild-dotnet-build).*
