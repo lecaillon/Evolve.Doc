@@ -53,3 +53,4 @@ catch (Exception ex)
   </Content>
 </ItemGroup>
 ```
+<i class="fa fa-info-circle"></i> Note that since Evolve 2.1.0, you can embed your migration scripts into assemblies.

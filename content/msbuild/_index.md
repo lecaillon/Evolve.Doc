@@ -56,5 +56,5 @@ All the options declared in the main [configuration](/configuration#options) pag
 
 | Name | Required | Description |
 |-------------------------------|:--------:|-------------------------------------------------------------------|
-| Evolve.Database | Yes <span style=color:red>*</span> | The type of database server: postgresql, sqlite, sqlserver, mysql, mariadb or cassandra |
-| Evolve.ConnectionString | Yes <span style=color:red>*</span> | The connection string to the database (can also be the name of a key in a connectionStrings section of your config file). Must have the necessary privileges to execute ddl. |
+| Evolve.Database | Yes | The type of database server: postgresql, sqlite, sqlserver, mysql, mariadb or cassandra |
+| Evolve.ConnectionString | Yes | The connection string to the database (can also be the name of a key in a connectionStrings section of your config file). Must have the necessary privileges to execute ddl. |
