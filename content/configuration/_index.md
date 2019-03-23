@@ -7,12 +7,21 @@ weight: 3
 icon: ""
 ---
 
-### Migration naming pattern
+### Versioned migration naming pattern
 
-To be processed by Evolve your migration scripts must follow this file name structure: *V1_3_1_1__Create_table.sql*:
+To be processed by Evolve your [versioned migrations](/concepts/#versioned-migration) must follow this file name structure: **V1_3_1_1__Create_table.sql**:
 
 - **prefix**: configurable, default: **V**
 - **version**: numbers separated by **_** (one underscore)
+- **separator**: configurable, default: **__** (two underscores)
+- **description**: words separated by single underscores
+- **suffix**: configurable, default: **.sql** 
+
+### Repeatable migration naming pattern
+
+[Repeatable migrations](/concepts/#repeatable-migration) must follow this file name structure: **R__Create_views.sql**:
+
+- **prefix**: configurable, default: **R**
 - **separator**: configurable, default: **__** (two underscores)
 - **description**: words separated by single underscores
 - **suffix**: configurable, default: **.sql** 
@@ -36,6 +45,7 @@ _Note that you can also use them through your config file if you use [Evolve.MSB
 | Evolve.OutOfOrder | No | false | Allows migrations to be run "out of order". If you already have versions 1 and 3 applied, and now a version 2 is found, it will be applied too instead of being ignored. |
 | Evolve.Encoding | No | UTF-8 | The encoding of SQL migration files. |
 | Evolve.SqlMigrationPrefix | No | V | Migration file name prefix. |
+| Evolve.SqlRepeatableMigrationPrefix | No | R | Repeatable migration file name prefix. |
 | Evolve.SqlMigrationSeparator | No | __ | Migration file name separator. |
 | Evolve.SqlMigrationSuffix | No | .sql | Migration file name suffix. |
 | Evolve.MetadataTableSchema | No |  | The schema containing the metadata table. If empty, the first schema defined in Schemas or the one of the datasource connection. |
