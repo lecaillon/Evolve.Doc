@@ -9,7 +9,7 @@ icon: ""
 
 ### Introduction
 
-Evolve 2.0 is the first major rewrite version. It will help simplify the overall design by getting rid of the hard to maintain dynamic database driver loading. The benefits: a simpler code base, a simpler test infrastructure, more time to develop new features. Evole is now decoupled from its MSBuild part and fully compatible with .NET Standard 2.0
+Evolve 2.0 is the first major rewrite version. It will help simplify the overall design by getting rid of the hard to maintain dynamic database driver loading. The benefits: a simpler code base, a simpler test infrastructure, more time to develop new features. Evolve is now decoupled from its MSBuild part and fully compatible with .NET Standard 2.0
 
 ### Installation
 
