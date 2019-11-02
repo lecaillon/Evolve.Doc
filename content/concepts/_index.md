@@ -74,6 +74,8 @@ Evolve has 3 execution commands to interact with your database:
 
 <i class="fa fa-hand-o-right"></i> **repair**: updates checksums of previously applied migrations with those of the currently available migration scripts.
 
+<i class="fa fa-hand-o-right"></i> **info**: displays the details and status information about all the migrations (<i class="fa fa-info-circle"></i> _since Evolve 2.3.0_).
+
 ### Transactions
 
 Each migration is executed in a separate database transaction. Thus each script will either succeed or fail completely and Evolve will stop on the first error. If your database supports DDL statements within a transaction, failed migrations will always be rolled back, otherwise you will have to manually fix your database state.
