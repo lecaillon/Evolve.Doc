@@ -9,4 +9,4 @@ icon: "/images/CockroachDB.png"
 - 2.0 and later
 
 ### Limitations
-- **No official support to coordinate the migrations on multiple nodes** because CockroachDB does not implement `pg_try_advisory_lock`. Evolve uses an alternative method discussed here: https://forum.cockroachlabs.com/t/alternatives-to-pg-advisory-locks/742, but not battle tested yet.
+- **No concurrent migration officially supported** because CockroachDB does not implement `pg_try_advisory_lock`. Evolve uses an alternative (but not battle tested) method discussed here: https://forum.cockroachlabs.com/t/alternatives-to-pg-advisory-locks/742.
