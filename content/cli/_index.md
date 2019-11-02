@@ -42,6 +42,7 @@ The database is the name of the database management system to which the command 
 - `mysql`
 - `mariadb`
 - `cassandra`
+- `cockroachdb`
 
 #### Options
 
