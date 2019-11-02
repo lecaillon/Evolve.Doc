@@ -59,8 +59,26 @@ Options:
   --metadata-table             The name of the metadata table. Default: changelog
 ```
 
-### Example
+#### Options file
+
+Evolve treats arguments beginning with **@** as a configuraiton file that contains additional options that will be treated as if they were passed in on the command line. This feature is very useful to avoid the repetition of parameters such as the database or the connection string.
+
+<i class="fa fa-info-circle"></i> _This feature is available since Evolve 2.3.0_
+
+### Examples
+
+<i class="fa fa-hand-o-right"></i> A simple example of a PostgreSQL migration:
 
 ```
 evolve migrate postgresql -c "Server=127.0.0.1;Database=db1;User Id=postgres;Password=postgres;" -l "C:\db\migrations" -s public -s unittest -p schema1:unittest
+```
+
+<i class="fa fa-hand-o-right"></i> The same example with the use of a configuration file called `args.txt` located in the same directory that the CLI:
+
+```
+evolve migrate @args.txt
+```
+
+```
+postgresql -c "Server=127.0.0.1;Database=db1;User Id=postgres;Password=postgres;" -l "C:\db\migrations" -s public -s unittest -p schema1:unittest
 ```
