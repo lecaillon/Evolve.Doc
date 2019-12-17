@@ -34,7 +34,7 @@ _Note that you can also use them through your config file if you use [Evolve.MSB
 |-------------------------------|:--------:|:-----------:|-------------------------------------------------------------------|
 | Evolve.Locations | Yes/No <span style=color:red>*</span> | Sql_Scripts | Paths (separated by semicolon) to scan recursively for migrations. <span style=color:red>*</span>Mandatory only if **Evolve.EmbeddedResourceAssemblies** is empty. |
 | Evolve.EmbeddedResourceAssemblies | Yes/No <span style=color:red>*</span> | | Assemblies (separated by semicolon) to scan to load embedded migration scripts. <span style=color:red>*</span>Mandatory only if **Evolve.Locations** is empty. |
-| Evolve.EmbeddedResourceFilters | No | | Excludes embedded migration scripts that do not start with one of these filters (separated by semicolon). |
+| Evolve.EmbeddedResourceFilters | No | | Includes embedded migration scripts that start with one of these filters (separated by semicolon). |
 | Evolve.EraseDisabled | No |  | When true, ensures that Evolve will never erase schemas. **Highly recommended in production.** |
 | Evolve.Command | No | | <ul><li>**migrate**: applies the migrations</li><li>**erase**: erases the database schema(s) if Evolve has created it or has found it empty</li><li>**repair**: corrects checksums of already applied migrations, with the ones from actual migration scripts</li><li>**info**: displays the details and status information about all the migrations (<i class="fa fa-info-circle"></i> _since Evolve 2.3.0_)</li></br><li>**when empty Evolve does nothing.**</li></ul> |
 | Evolve.CommandTimeout | No |  | The time in seconds to wait for the migration to execute before terminating the command and generating an error. |
