@@ -79,6 +79,8 @@ evolve migrate postgresql -c "Server=127.0.0.1;Database=db1;User Id=postgres;Pas
 evolve migrate @args.txt
 ```
 
+<i class="fa fa-file-o"></i> Content of `args.txt`
+
 ```
 postgresql -c "Server=127.0.0.1;Database=db1;User Id=postgres;Password=postgres;" -l "C:\db\migrations" -s public -s unittest -p schema1:unittest
 ```
