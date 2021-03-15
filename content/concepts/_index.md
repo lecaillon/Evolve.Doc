@@ -14,7 +14,7 @@ In Evolve, each sql script is called a **migration**. There are two different ty
 - [Versioned migration](#versioned-migration)
 - [Repeatable migration](#repeatable-migration)
 
-At startup Evolve will collect all migrations located in [Evolve.Locations](/configuration/#options), searching recursively for files with a specific file name structure. All migrations starting by a **V** are then sorted by version in ascending order, regardless their initial directory. **Each version of a migration must be unique**. If not, the validation phase fails.
+At startup Evolve will collect all migrations located in [Locations](/configuration/#options), searching recursively for files with a specific file name structure. All migrations starting by a **V** are then sorted by version in ascending order, regardless their initial directory. **Each version of a migration must be unique**. If not, the validation phase fails.
 
 Once executed, the same goes for repeatable migrations, starting by a **R**, except ordered by description.
 
@@ -82,11 +82,14 @@ Each migration is executed in a separate database transaction. Thus each script 
 
 ### Placeholders
 
-Placeholders are strings prefixed by: *Evolve.Placeholder.* that will be replaced in sql migrations before their execution. They make it possible to get dynamic migrations depending on the environment.
+Placeholders are strings enclosed by `${}` that will be replaced in sql migrations before their execution. They make it possible to get dynamic migrations depending on the environment.
 
-```xml
-<add key="Evolve.Placeholder.schema1" value="my_schema" />
-<add key="Evolve.Placeholder.database" value="my_db" />
+```c#
+evolve.Placeholders = new Dictionary<string, string>
+{
+    ["${database}"] = "my_db",
+    ["${schema1}"] = "my_schema"
+}
 ```
 
 ```sql
@@ -107,7 +110,7 @@ During its initial execution, Evolve creates a table with a default name of **ch
 <i class="fa fa-hand-o-right"></i> The `type` column is used to identify which type of metadata is stored:
 
 - 0: versioned migration.
-- 1: new schema. Indicates that Evolve created the schema and thus can **drop** it if `Evolve.Command = "erase"`.
-- 2: empty schema. Indicates that the schema was empty before Evolve applied the first migration and thus can **erase** it if `Evolve.Command = "erase"`. 
-- 3: start version. Used by Evolve to store the version from which to take migrations (cf. `Evolve.StartVersion`).
+- 1: new schema. Indicates that Evolve created the schema and thus can **drop** it if `Command = "erase"`.
+- 2: empty schema. Indicates that the schema was empty before Evolve applied the first migration and thus can **erase** it if `Command = "erase"`. 
+- 3: start version. Used by Evolve to store the version from which to take migrations (cf. `StartVersion`).
 - 4: repeatable version.

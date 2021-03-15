@@ -9,7 +9,7 @@ icon: ""
 
 ##### Can I modify the content of a migration after it has been applied ?
 
-- Yes, in development. The `Evolve.MustEraseOnValidationError` option is provided specifically for this use case. 
+- Yes, in development. The `MustEraseOnValidationError` option is provided specifically for this use case. 
 - No, in production. The checksum validation performed by Evolve will fail. Since we're in production, erasing the data and starting over will likely not be an option.
 
 ##### Can multiple nodes migrate in parallel ?
