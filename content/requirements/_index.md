@@ -7,17 +7,23 @@ weight: 1
 icon: ""
 ---
 
-### Supported frameworks
+### Evolve .NET library
+- .NET 4.7.2+
+- .NET Standard 2.0 / .NET 5.0
 
-- .NET 3.5+
-- .NET 4.6.1+
-- .NET Standard 2.0+
+### Evolve .NET tool
+- .NET Core 3.1
+- .NET 5.0
+
+### Evolve CLI
+- Windows-64bit
+- Linux-64bit
 
 ### Supported databases
 
 - [PostgreSQL](/requirements/postgresql/)
-- [SQLite](/requirements/sqlite/)
 - [SQL Server](/requirements/sqlserver/)
+- [SQLite](/requirements/sqlite/)
 - [MySQL](/requirements/mysql/)
 - [MariaDB](/requirements/mariadb/)
 - [Cassandra](/requirements/cassandra/)

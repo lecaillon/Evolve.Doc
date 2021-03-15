@@ -18,10 +18,9 @@ googleAnalytics = "UA-115057388-1"
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 
-[[Languages.en.menu.shortcuts]] 
-name = "<i class='fa fa-github'></i> Github repo"
-identifier = "ds"
-url = "https://github.com/lecaillon/Evolve"
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fa fa-heart'></i> Sponsors"
+url = "/sponsors"
 weight = 10
 
 [[Languages.en.menu.shortcuts]]
@@ -29,7 +28,8 @@ name = "<i class='fa fa-envelope-o'></i> Contact"
 url = "/contact"
 weight = 20
 
-[[Languages.en.menu.shortcuts]]
-name = "<i class='fa fa-bullhorn'></i> Credits"
-url = "/credits"
+[[Languages.en.menu.shortcuts]] 
+name = "<i class='fa fa-github'></i> Github repo"
+identifier = "ds"
+url = "https://github.com/lecaillon/Evolve"
 weight = 30

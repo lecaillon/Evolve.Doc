@@ -9,4 +9,3 @@ icon: "/images/MySQL.png"
 - 5.1 and later
 
 ### Limitations
-> The DELIMITER keyword is not supported in the sql scripts.

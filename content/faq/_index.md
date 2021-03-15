@@ -2,8 +2,8 @@
 title: "FAQ"
 draft: false
 chapter: false
-pre: "<b>9. </b>"
-weight: 9
+pre: "<b>6. </b>"
+weight: 6
 icon: ""
 ---
 
@@ -16,15 +16,3 @@ icon: ""
 
 Yes! Evolve will use the session level lock of your database to coordinate the migrations on multiple nodes. This prevents two distinct Evolve executions from running an Evolve command on the same database at the same time.
 
-##### Is it possible to get connection string from connectionStrings section ?
-
-Yes! The option `Evolve.ConnectionString` can also be the name of a key in a connectionStrings section of your config file.
-
-##### Can I provide configuration via environment variables ?
-
-Yes! Use this syntax for your environment variables: `${DB_PWD}`
-
-##### Is it possible to disable the MS Build task ?
-
-- Yes! For .NET Core projects, do not add any `evolve.json` file in your solution.
-- Yes! For .NET projects, do not add any Evolve.* keys in `<appSettings>` or let the `Evolve.Command` value empty.

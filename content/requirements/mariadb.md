@@ -9,4 +9,4 @@ icon: "/images/MariaDB.png"
 - 10.0 and later
 
 ### Limitations
-> The DELIMITER keyword is not supported in the sql scripts.
+- The `DELIMITER` keyword is not supported in the sql scripts.
