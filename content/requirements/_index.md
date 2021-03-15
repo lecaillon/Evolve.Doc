@@ -12,8 +12,7 @@ icon: ""
 - .NET Standard 2.0 / .NET 5.0
 
 ### Evolve .NET tool
-- .NET Core 3.1
-- .NET 5.0
+- .NET Core SDK 3.0 and later
 
 ### Evolve CLI
 - Windows-64bit

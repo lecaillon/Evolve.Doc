@@ -6,7 +6,7 @@ weight: 1
 
 ### Installation
 
-Evolve is available as a single [NuGet package](https://www.nuget.org/packages/Evolve).
+Evolve is available on [NuGet](https://www.nuget.org/packages/Evolve).
 
 ```
 Install-Package Evolve
@@ -14,7 +14,7 @@ Install-Package Evolve
 
 ### Quick Start
 
-<i class="fa fa-hand-o-right"></i> Initialize and [configure](/configuration/#options) Evolve to run when you start your application:
+<i class="fa fa-hand-o-right"></i> Initialize and [configure](/configuration/#options) Evolve to **migrate** the schema to the latest version when you start your application:
 
 ```C#
 try
@@ -46,4 +46,5 @@ catch (Exception ex)
   </Content>
 </ItemGroup>
 ```
-<i class="fa fa-info-circle"></i> Note that since Evolve 2.1.0, you can embed your migration scripts into assemblies.
+
+<i class="fa fa-info-circle"></i> Samples can be found [here](/samples)
