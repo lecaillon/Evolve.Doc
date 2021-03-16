@@ -4,10 +4,10 @@ draft: false
 weight: 1
 ---
 
-### Introduction
+#### Introduction
 ...
 
-### Installation
+#### Installation
 
 Evolve is available on [NuGet](https://www.nuget.org/packages/Evolve).
 
@@ -15,7 +15,7 @@ Evolve is available on [NuGet](https://www.nuget.org/packages/Evolve).
 Install-Package Evolve
 ```
 
-### Quick Start
+#### Quick Start
 
 <i class="fa fa-hand-o-right"></i> Initialize and [configure](/configuration/#options) Evolve to **migrate** the schema to the latest version when you start your application:
 

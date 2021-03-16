@@ -7,7 +7,7 @@ weight: 4
 icon: ""
 ---
 
-### Versioned migration naming pattern
+#### Versioned migration naming pattern
 
 To be processed by Evolve your [versioned migrations](/concepts/#versioned-migration) must follow this file name structure: **V1_3_1_1__Create_table.sql**:
 
@@ -17,7 +17,7 @@ To be processed by Evolve your [versioned migrations](/concepts/#versioned-migra
 - **description**: words separated by single underscores
 - **suffix**: configurable, default: **.sql** 
 
-### Repeatable migration naming pattern
+#### Repeatable migration naming pattern
 
 [Repeatable migrations](/concepts/#repeatable-migration) must follow this file name structure: **R__Create_views.sql**:
 
@@ -26,7 +26,7 @@ To be processed by Evolve your [versioned migrations](/concepts/#versioned-migra
 - **description**: words separated by single underscores
 - **suffix**: configurable, default: **.sql** 
 
-### Options
+#### Options
 
 | Name | Required | Default | Description |
 |-------------------------------|:--------:|:-----------:|-------------------------------------------------------------------|

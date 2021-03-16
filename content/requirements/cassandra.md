@@ -5,10 +5,10 @@ weight: 6
 icon: "/images/Cassandra.png"
 ---
 
-### Versions
+#### Versions
 - 1.2+ of Cassandra with CQL v3
 
-### Limitations
+#### Limitations
 
 - The parser will divide scripts in commands by dividing it into lines and look for lines that finish with the ';' character; make sure all your commands end with a ';' that is the last character of a line.
   - If a line in a comment or a literal ends with ';', it will be an issue: avoid it.
@@ -19,6 +19,6 @@ icon: "/images/Cassandra.png"
   - For all these reasons, it is recommended that you create the keyspace separately at the moment.
 - The ```use <keyspace>;``` command is not supported by the underlying driver. Make sure you prefix all your table names with their respective keyspace in all commands (example: ```create table mykeyspace.mytable```.
 
-### TODO
+#### TODO
 
  - Allow configuration of the default replication strategy when Evolve creates a keyspace

@@ -4,7 +4,7 @@ draft: false
 weight: 2
 ---
 
-### Introduction
+#### Introduction
 
 If you prefer to manage your database migrations outside your application, Evolve is also available as a .NET tool. **Evolve.Tool** is a special NuGet package that contains a console application which requires .NET Core SDK 3.0 or later.
 
@@ -21,11 +21,11 @@ dotnet new tool-manifest
 dotnet tool install Evolve.Tool
 ```
 
-### Command structure
+#### Command structure
 
 Evolve.Tool command structure consists of a [Command](#command-verb), a [Database](#database) and a list of [options](#options).
 
-#### Command ("verb")
+##### Command ("verb")
 
 The command (or "verb") is simply a command that performs an action:
 
@@ -34,7 +34,7 @@ The command (or "verb") is simply a command that performs an action:
 - `repair`: corrects checksums of already applied migrations, with the ones from actual migration scripts.
 - `info`: displays the details and status information about all the migrations (<i class="fa fa-info-circle"></i> _since Evolve 2.3.0_).
 
-#### Database
+##### Database
 
 The database is the name of the database management system to which the command will be applied:
 
@@ -46,7 +46,7 @@ The database is the name of the database management system to which the command 
 - `cassandra`
 - `cockroachdb`
 
-#### Options
+##### Options
 
 The options you pass on the command line are the options to the command invoked. They are the same that the one available in Evolve at the [configuration](/configuration#options) section, but with more suitable names for a CLI. Below the main options:
 
@@ -60,11 +60,11 @@ Options:
   --metadata-table             The name of the metadata table. Default: changelog
 ```
 
-#### Options file
+##### Options file
 
 Evolve treats arguments beginning with **@** as a configuraiton file that contains additional options that will be treated as if they were passed in on the command line. This feature is very useful to avoid the repetition of parameters such as the database or the connection string.
 
-### Examples
+#### Examples
 
 <i class="fa fa-hand-o-right"></i> A simple example of a PostgreSQL migration:
 

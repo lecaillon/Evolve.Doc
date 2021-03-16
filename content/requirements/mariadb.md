@@ -5,8 +5,8 @@ weight: 5
 icon: "/images/MariaDB.png"
 ---
 
-### Versions
+#### Versions
 - 10.0 and later
 
-### Limitations
+#### Limitations
 - The `DELIMITER` keyword is not supported in the sql scripts.
