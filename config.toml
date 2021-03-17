@@ -13,6 +13,8 @@ disableShortcutsTitle = false
 ordersectionsby = "weight"
 disableSearch = false
 disableAssetsBusting = false
+disableBreadcrumb = true
+disableMermaid = true
 googleAnalytics = "UA-115057388-1"
 
 [outputs]
@@ -25,11 +27,17 @@ weight = 10
 
 [[Languages.en.menu.shortcuts]]
 name = "<i class='fa fa-envelope-o'></i> Contact"
-url = "/contact"
+url = "mailto:evolve-db@hotmail.com"
 weight = 20
+
+[[Languages.en.menu.shortcuts]] 
+name = "<i class='fa fa-twitter'></i> Twitter"
+identifier = "tw"
+url = "https://twitter.com/evolve_db"
+weight = 30
 
 [[Languages.en.menu.shortcuts]] 
 name = "<i class='fa fa-github'></i> Github repo"
 identifier = "ds"
 url = "https://github.com/lecaillon/Evolve"
-weight = 30
+weight = 40
