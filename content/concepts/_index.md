@@ -18,9 +18,7 @@ At startup Evolve will collect all migrations located in [Locations](/configurat
 
 Once executed, the same goes for repeatable migrations, starting by a **R**, except ordered by description.
 
-When all migrations are applied, their name and checksum are saved into the Evolve metadata table. This table is checked every time Evolve runs, to see if the migration script has already been applied.
-
-<i class="fa fa-info-circle"></i> _Repeatable migration is available since Evolve 2.2.0._
+Each time a migration is applied, its name and checksum is saved into the Evolve metadata table. This table is checked every time Evolve runs, to see if the migration script has already been applied.
 
 #### Versioned migration
 
