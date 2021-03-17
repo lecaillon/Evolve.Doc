@@ -1,6 +1,5 @@
 ---
 title: "Getting Started"
-draft: false
 chapter: true
 pre: "<b>2. </b>"
 weight: 2
