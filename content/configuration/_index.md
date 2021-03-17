@@ -31,7 +31,7 @@ To be processed by Evolve your [versioned migrations](/concepts/#versioned-migra
 | Name | Required | Default | Description |
 |-------------------------------|:--------:|:-----------:|-------------------------------------------------------------------|
 Locations | Yes/No <span style=color:red>*</span> | Sql_Scripts | Paths (separated by semicolon) to scan recursively for migrations. <span style=color:red>*</span>Mandatory only if **EmbeddedResourceAssemblies** is empty. |
-EmbeddedResourceAssemblies | Yes/No <span style=color:red>*</span> | | Assemblies (separated by semicolon) to scan to load embedded migration scripts. <span style=color:red>*</span>Mandatory only if **Locations** is empty. |
+EmbeddedResourceAssemblies | Yes/No <span style=color:red>*</span> | | Assemblies (separated by semicolon) to scan in order to load embedded migration scripts. <span style=color:red>*</span>Mandatory only if **Locations** is empty. |
 EmbeddedResourceFilters | No | | Includes embedded migration scripts that start with one of these filters (separated by semicolon). |
 EraseDisabled | No |  | When true, ensures that Evolve will never erase schemas. **Highly recommended in production.** |
 Command | No | | <ul><li>**migrate**: applies the migrations</li><li>**erase**: erases the database schema(s) if Evolve has created it or has found it empty</li><li>**repair**: corrects checksums of already applied migrations, with the ones from actual migration scripts</li><li>**info**: displays the details and status information about all the migrations (<i class="fa fa-info-circle"></i> _since Evolve 2.3.0_)</li></br><li>**when empty Evolve does nothing.**</li></ul> |

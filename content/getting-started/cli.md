@@ -6,7 +6,7 @@ weight: 3
 
 #### Introduction
 
-If you prefer to manage your database migrations outside your application **without installing the .NET SDK**, the Evolve command-line interface (CLI) is the ideal tool. It is a standalone binary file. No runtime needed in order to use it. 
+If you prefer to manage your database migrations outside your application **without installing the .NET SDK**, the Evolve command-line interface (CLI) is the ideal tool. It is a standalone binary file with no external dependencies.
 
 Currently, we provide Evolve.CLI binaries for the following x64 architecture:
 
