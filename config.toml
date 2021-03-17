@@ -3,41 +3,44 @@ languageCode = "en-us"
 title = "Evolve"
 theme = "hugo-theme-learn"
 
-[params]
-editURL = "https://github.com/lecaillon/Evolve.Doc/edit/master/content/"
-description = "Documentation for Evolve"
-author = "Philippe Lécaillon"
-showVisitedLinks = false
-themeVariant = "evolve"
-disableShortcutsTitle = false
-ordersectionsby = "weight"
-disableSearch = false
-disableAssetsBusting = false
-disableBreadcrumb = true
-disableMermaid = true
-googleAnalytics = "UA-115057388-1"
-
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+	  
+[params]
+editURL = ""
+description = "Evolve documentation cross platform database migration tool"
+author = "Philippe Lécaillon"
+themeVariant = "evolve"
+ordersectionsby = "weight"
+disableShortcutsTitle = true
+disableBreadcrumb = true
+disableLanguageSwitchingButton = true
+disableMermaid = true
+googleAnalytics = "UA-115057388-1"
+
 [[Languages.en.menu.shortcuts]]
-name = "<i class='fa fa-heart'></i> Sponsors"
-url = "/sponsors"
+name = "<i class='far fa-heart' style='color:HotPink'></i> Sponsor"
+url = "https://github.com/sponsors/lecaillon"
 weight = 10
 
 [[Languages.en.menu.shortcuts]]
-name = "<i class='fa fa-envelope-o'></i> Contact"
+name = "<i class='fa fa-envelope-open'></i> Contact"
 url = "mailto:evolve-db@hotmail.com"
 weight = 20
 
 [[Languages.en.menu.shortcuts]] 
-name = "<i class='fa fa-twitter'></i> Twitter"
+name = "<i class='fab fa-twitter'></i> Twitter"
 identifier = "tw"
 url = "https://twitter.com/evolve_db"
 weight = 30
 
 [[Languages.en.menu.shortcuts]] 
-name = "<i class='fa fa-github'></i> Github repo"
+name = "<i class='fab fa-github'></i> Github repo"
 identifier = "ds"
 url = "https://github.com/lecaillon/Evolve"
 weight = 40
