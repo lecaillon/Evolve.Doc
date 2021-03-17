@@ -11,9 +11,9 @@ icon: ""
 
 This sample demonstrates how to use Evolve to migrate a database in a ASP.NET Core environment.
 
-<i class="fa fa-hand-o-right"></i> You can find the sample based on **file** migration scripts [here](https://github.com/lecaillon/Evolve/tree/master/samples/AspNetCoreSample_Evolve)
+<i class="far fa-hand-point-right"></i> You can find the sample based on **file** migration scripts [here](https://github.com/lecaillon/Evolve/tree/master/samples/AspNetCoreSample_Evolve)
 
-<i class="fa fa-hand-o-right"></i> And a sample using **embedded** migration scripts [here](https://github.com/lecaillon/Evolve/tree/master/samples/AspNetCoreSample_Evolve_EmbeddedResources)
+<i class="far fa-hand-point-right"></i> And a sample using **embedded** migration scripts [here](https://github.com/lecaillon/Evolve/tree/master/samples/AspNetCoreSample_Evolve_EmbeddedResources)
 
 ##### Key points
 

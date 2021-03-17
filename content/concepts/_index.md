@@ -24,13 +24,13 @@ Each time a migration is applied, its name and checksum is saved into the Evolve
 
 A versioned migration is composed of a **version**, an informative **description** and a **checksum**. The first numbers that make up the version of your migration may be the release version of your application followed by a counter.
 
-<i class="fa fa-exclamation-triangle"></i> A versioned migration is executed only once.
+<i class="fas fa-info-circle"></i> A versioned migration is executed only once.
 
-<i class="fa fa-hand-o-right"></i> The version must be unique.
+<i class="far fa-hand-point-right"></i> The version must be unique.
 
-<i class="fa fa-hand-o-right"></i> They are applied in the order of their versions.
+<i class="far fa-hand-point-right"></i> They are applied in the order of their versions.
 
-<i class="fa fa-hand-o-right"></i> The checksum is stored in the Evolve metadata table and used to detect accidental changes.
+<i class="far fa-hand-point-right"></i> The checksum is stored in the Evolve metadata table and used to detect accidental changes.
 
 ##### Naming
 
@@ -47,11 +47,11 @@ Versioned migration must follow this file name structure: **V1_3_1_1__Create_tab
 Unlike the versioned migration above, repeatable migrations are applied whenever their content changes. They do not have a version and are executed sorted by name.
 You can use them to manage database objects you can create or update such as views and stored procedures, or to insert seed data that can evolve and grow over time.
 
-<i class="fa fa-exclamation-triangle"></i> A repeatable migration is executed each time its content (checksum) changes.
+<i class="fas fa-info-circle"></i> A repeatable migration is executed each time its content (checksum) changes.
 
-<i class="fa fa-hand-o-right"></i> They are applied **after** versioned migrations.
+<i class="far fa-hand-point-right"></i> They are applied **after** versioned migrations.
 
-<i class="fa fa-hand-o-right"></i> They are applied in the order of their description.
+<i class="far fa-hand-point-right"></i> They are applied in the order of their description.
 
 ##### Naming
 
@@ -66,13 +66,13 @@ Repeatable migrations must follow this file name structure: **R__Create_views.sq
 
 Evolve has 4 execution commands to interact with your database:
 
-<i class="fa fa-hand-o-right"></i> **migrate**: applies the migrations. It's the main command. 
+<i class="far fa-hand-point-right"></i> **migrate**: applies the migrations. It's the main command. 
 
-<i class="fa fa-hand-o-right"></i> **erase**: erases the database schema(s) if Evolve has created it or has found it empty (cf. [Metadata table](#metadata-table)). Otherwise Evolve will not do anything. This command is intended to be use in development to start with a new clean database.
+<i class="far fa-hand-point-right"></i> **erase**: erases the database schema(s) if Evolve has created it or has found it empty (cf. [Metadata table](#metadata-table)). Otherwise Evolve will not do anything. This command is intended to be use in development to start with a new clean database.
 
-<i class="fa fa-hand-o-right"></i> **repair**: updates checksums of previously applied migrations with those of the currently available migration scripts.
+<i class="far fa-hand-point-right"></i> **repair**: updates checksums of previously applied migrations with those of the currently available migration scripts.
 
-<i class="fa fa-hand-o-right"></i> **info**: displays the details and status information about all the migrations (<i class="fa fa-info-circle"></i> _since Evolve 2.3.0_).
+<i class="far fa-hand-point-right"></i> **info**: displays the details and status information about all the migrations.
 
 #### Transactions
 
@@ -105,7 +105,7 @@ During its initial execution, Evolve creates a table with a default name of **ch
 | 3 | 0 | 1.0.0.1 | create triggers | V1_0_0_1__create_triggers.sql | A4AA367C92B99C56E88132... | sa | 22/02/2019 20:45:16 | True |
 | 4 | 4 | | Create views | R__Create_views.sql | Z6AA3T7C92B549C56E8813T... | sa | 22/02/2019 20:45:18 | True |
 
-<i class="fa fa-hand-o-right"></i> The `type` column is used to identify which type of metadata is stored:
+<i class="far fa-hand-point-right"></i> The `type` column is used to identify which type of metadata is stored:
 
 - 0: versioned migration.
 - 1: new schema. Indicates that Evolve created the schema and thus can **drop** it if `Command = "erase"`.

@@ -19,6 +19,7 @@ themeVariant = "evolve"
 ordersectionsby = "weight"
 disableShortcutsTitle = true
 disableBreadcrumb = true
+disableLandingPageButton = true
 disableLanguageSwitchingButton = true
 disableMermaid = true
 googleAnalytics = "UA-115057388-1"

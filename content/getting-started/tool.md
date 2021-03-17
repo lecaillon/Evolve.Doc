@@ -32,7 +32,7 @@ The command (or "verb") is simply a command that performs an action:
 - `migrate`: applies the migrations.
 - `erase`: erases the database schema(s) if Evolve has created it or has found it empty.
 - `repair`: corrects checksums of already applied migrations, with the ones from actual migration scripts.
-- `info`: displays the details and status information about all the migrations (<i class="fa fa-info-circle"></i> _since Evolve 2.3.0_).
+- `info`: displays the details and status information about all the migrations.
 
 ##### Database
 
@@ -66,13 +66,13 @@ Evolve treats arguments beginning with **@** as a configuraiton file that contai
 
 #### Examples
 
-<i class="fa fa-hand-o-right"></i> A simple example of a PostgreSQL migration:
+<i class="far fa-hand-point-right"></i> A simple example of a PostgreSQL migration:
 
 ```
 evolve migrate postgresql -c "Server=127.0.0.1;Database=db1;User Id=postgres;Password=postgres;" -l "C:\db\migrations" -s public -s unittest -p schema1:unittest
 ```
 
-<i class="fa fa-hand-o-right"></i> The same example using a configuration file called `args.txt` located in the current directory:
+<i class="far fa-hand-point-right"></i> The same example using a configuration file called `args.txt` located in the current directory:
 
 ```
 evolve migrate '@args.txt'

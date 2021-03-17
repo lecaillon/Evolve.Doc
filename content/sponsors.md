@@ -1,5 +1,0 @@
----
-title: Sponsors
-disableToc: true
----
-
