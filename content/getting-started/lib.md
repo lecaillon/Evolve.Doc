@@ -8,19 +8,19 @@ weight: 1
 
 In a .NET project, the easiest way to keep the database schema up to date across all your environments, is to deploy the SQL migration scripts with your assemblies and to execute Evolve at startup. This way, the deployed application automatically applies migrations and is always in sync with the database schema version.
 
-<i class="fas fa-info-circle"></i> Note you can even embed your migration scripts **into** assemblies not to expose intrisics of your application to the outside (see [EmbeddedResourceAssemblies](/configuration/#options) option).
+<i class="fas fa-info-circle"></i> Note you can even embed your migration scripts **into** assemblies not to expose intrisics of your application to the outside (see [EmbeddedResourceAssemblies](/configuration/options) option).
 
 #### Installation
 
 Evolve is available on [NuGet](https://www.nuget.org/packages/Evolve).
 
-```
+```powershell
 Install-Package Evolve
 ```
 
 #### Quick Start
 
-<i class="far fa-hand-point-right"></i> Initialize and [configure](/configuration/#options) Evolve to **migrate** the schema to the latest version when you start your application:
+<i class="far fa-hand-point-right"></i> Initialize and [configure](/configuration/options) Evolve to **migrate** the schema to the latest version when you start your application:
 
 ```C#
 try

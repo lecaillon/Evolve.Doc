@@ -1,10 +1,8 @@
 ---
 title: "Concepts"
-draft: false
 chapter: false
 pre: "<b>3. </b>"
 weight: 3
-icon: ""
 ---
 
 #### Overview
@@ -14,15 +12,17 @@ In Evolve, each sql script is called a **migration**. There are two different ty
 - [Versioned migration](#versioned-migration)
 - [Repeatable migration](#repeatable-migration)
 
-At startup Evolve will collect all migrations located in [Locations](/configuration/#options), searching recursively for files with a specific file name structure. All migrations starting by a **V** are then sorted by version in ascending order, regardless their initial directory. **Each version of a migration must be unique**. If not, the validation phase fails.
+At startup Evolve will collect all migrations located in [Locations](/configuration/options), searching **recursively** for files with a specific file [name structure](/configuration/naming). All migrations starting by a **V** are then sorted by version in ascending order, regardless their initial directory. Each version of a migration must be unique. If not, the validation phase fails.
 
-Once executed, the same goes for repeatable migrations, starting by a **R**, except ordered by description.
+The same goes for repeatable migrations, starting by a **R**, except ordered by description.
 
-Each time a migration is applied, its name and checksum is saved into the Evolve metadata table. This table is checked every time Evolve runs, to see if the migration script has already been applied.
+Then, each time a migration is applied, its name and checksum is saved into the Evolve metadata table. This table is checked every time Evolve runs, to see if the migration script must be executed.
 
 #### Versioned migration
 
-A versioned migration is composed of a **version**, an informative **description** and a **checksum**. The first numbers that make up the version of your migration may be the release version of your application followed by a counter.
+The versioned migration is the _default_ migration.
+
+It is composed of a **version**, an informative **description** and a **checksum**. For example, the first numbers that make up the version of your migration may be the release version of your application followed by a counter. Versioned migration must follow this file [name structure](/configuration/naming): **V1_3_1_1__Create_table.sql**.
 
 <i class="fas fa-info-circle"></i> A versioned migration is executed only once.
 
@@ -32,35 +32,15 @@ A versioned migration is composed of a **version**, an informative **description
 
 <i class="far fa-hand-point-right"></i> The checksum is stored in the Evolve metadata table and used to detect accidental changes.
 
-##### Naming
-
-Versioned migration must follow this file name structure: **V1_3_1_1__Create_table.sql**:
-
-- **prefix**: configurable, default: **V**
-- **version**: numbers separated by **_** (one underscore)
-- **separator**: configurable, default: **__** (two underscores)
-- **description**: words separated by single underscores
-- **suffix**: configurable, default: **.sql** 
-
 #### Repeatable migration
 
-Unlike the versioned migration above, repeatable migrations are applied whenever their content changes. They do not have a version and are executed sorted by name.
-You can use them to manage database objects you can create or update such as views and stored procedures, or to insert seed data that can evolve and grow over time.
+The repeatable migration is applied whenever its content changes. It does not have a version and is executed sorted by name after all pending versioned migrations. You can use them to manage database objects you can create or update, such as views and stored procedures, or to insert seed data that can evolve and grow over time. Repeatable migrations must follow this file [name structure](/configuration/naming): **R__Create_views.sql**:
 
 <i class="fas fa-info-circle"></i> A repeatable migration is executed each time its content (checksum) changes.
 
 <i class="far fa-hand-point-right"></i> They are applied **after** versioned migrations.
 
 <i class="far fa-hand-point-right"></i> They are applied in the order of their description.
-
-##### Naming
-
-Repeatable migrations must follow this file name structure: **R__Create_views.sql**:
-
-- **prefix**: configurable, default: **R**
-- **separator**: configurable, default: **__** (two underscores)
-- **description**: words separated by single underscores
-- **suffix**: configurable, default: **.sql** 
 
 #### Commands
 
@@ -76,12 +56,14 @@ Evolve has 4 execution commands to interact with your database:
 
 #### Transactions
 
-Each migration is executed in a separate database transaction. Thus each script will either succeed or fail completely and Evolve will stop on the first error. If your database supports DDL statements within a transaction, failed migrations will always be rolled back, otherwise you will have to manually fix your database state.
+By default, each migration is executed in a separate database transaction. Thus each script will either succeed or fail completely and Evolve will stop on the first error. If your database supports DDL statements within a transaction, failed migrations will always be rolled back, otherwise you will have to manually fix your database state.
 
 #### Placeholders
 
 Placeholders are strings enclosed by `${}` that will be replaced in sql migrations before their execution. They make it possible to get dynamic migrations depending on the environment.
 
+{{< tabs groupId="placeholders" >}}
+{{% tab name=".NET library" %}}
 ```c#
 evolve.Placeholders = new Dictionary<string, string>
 {
@@ -89,6 +71,18 @@ evolve.Placeholders = new Dictionary<string, string>
     ["${schema1}"] = "my_schema"
 }
 ```
+{{% /tab %}}
+{{% tab name=".NET tool" %}}
+```xxx
+-p database:my_db -p schema1:my_schema
+```
+{{% /tab %}}
+{{% tab name="CLI" %}}
+```xxx
+-p database:my_db -p schema1:my_schema
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 ```sql
 SELECT * FROM ${database}.${schema1}.TABLE_1; -- SELECT * FROM my_db.my_schema.TABLE_1;
@@ -96,7 +90,7 @@ SELECT * FROM ${database}.${schema1}.TABLE_1; -- SELECT * FROM my_db.my_schema.T
 
 #### Metadata table
 
-During its initial execution, Evolve creates a table with a default name of **changelog**, to keep track of all migrations (applied or failed) and to store their checksums. Example:
+During its initial execution, Evolve creates a table with a default name of **changelog**, to keep track of all migrations (applied or failed) and to store their checksums. You can change its default name and schema using these 2 options: `MetadataTableName` and `MetadataTableSchema`.
 
 | id | type | version | description | name | checksum | installed_by | installed_on | success |
 |----|:----:|---------|-------------|------|----------|-------------|--------------|:-------:|
