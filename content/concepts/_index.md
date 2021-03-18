@@ -58,6 +58,8 @@ Evolve has 4 execution commands to interact with your database:
 
 By default, each migration is executed in a separate database transaction. Thus each script will either succeed or fail completely and Evolve will stop on the first error. If your database supports DDL statements within a transaction, failed migrations will always be rolled back, otherwise you will have to manually fix your database state.
 
+You can also wrap all your migrations in a single transaction using the option `TransactionMode` with the value `CommitAll` to commit a group of script if they all succeed, or rollback them all if one fails.
+
 #### Placeholders
 
 Placeholders are strings enclosed by `${}` that will be replaced in sql migrations before their execution. They make it possible to get dynamic migrations depending on the environment.
