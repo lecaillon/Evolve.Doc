@@ -22,8 +22,7 @@ With your help, I can focus on open-source work more and make it sustainable. If
 
 #### Evolve beloved sponsors
 
-</br>
-<table>
+<table style="width: auto">
   <tbody>
     <tr>
       <td align="center" valign="middle">
