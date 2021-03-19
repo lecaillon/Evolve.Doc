@@ -7,7 +7,7 @@ weight: 3
 
 #### Overview
 
-In Evolve, each sql script is called a **migration**. There are two different types:
+In Evolve, each sql script is called a **migration**. Every time you need to change your database schema or data, you have to create a new one. There are two different types:
 
 - [Versioned migration](#versioned-migration)
 - [Repeatable migration](#repeatable-migration)
@@ -48,7 +48,7 @@ Evolve has 4 execution commands to interact with your database:
 
 <i class="far fa-hand-point-right"></i> **migrate**: applies the migrations. It's the main command. 
 
-<i class="far fa-hand-point-right"></i> **erase**: erases the database schema(s) if Evolve has created it or has found it empty (cf. [Metadata table](#metadata-table)). Otherwise Evolve will not do anything. This command is intended to be use in development to start with a new clean database.
+<i class="far fa-hand-point-right"></i> **erase**: erases the database schema(s) if Evolve has created it or has found it empty (cf. [Metadata table](#metadata-table)). Otherwise Evolve will not do anything. This command is intended to be use in development to recreate a database from scratch.
 
 <i class="far fa-hand-point-right"></i> **repair**: updates checksums of previously applied migrations with those of the currently available migration scripts.
 
