@@ -7,18 +7,57 @@ weight: 1
 icon: ""
 ---
 
-### Supported frameworks
+#### Evolve .NET library
+- .NET 4.7.2+
+- .NET Standard 2.0 / .NET 5.0
 
-- .NET 3.5+
-- .NET 4.6.1+
-- .NET Standard 2.0+
+#### Evolve .NET tool
+- .NET Core SDK 3.0 and later
 
-### Supported databases
+#### Evolve CLI
+- Windows-64bit
+- Linux-64bit
 
-- [PostgreSQL](/requirements/postgresql/)
-- [SQLite](/requirements/sqlite/)
-- [SQL Server](/requirements/sqlserver/)
-- [MySQL](/requirements/mysql/)
-- [MariaDB](/requirements/mariadb/)
-- [Cassandra](/requirements/cassandra/)
-- [CockroachDB](/requirements/cockroachdb/)
+#### Supported databases
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="middle">
+        <a href="/requirements/postgresql">
+          <img src="https://raw.githubusercontent.com/lecaillon/Evolve/master/images/postgresql.png" style="margin: 0rem auto">
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="/requirements/sqlserver">
+          <img src="https://raw.githubusercontent.com/lecaillon/Evolve/master/images/sqlserver.png" style="margin: 0rem auto">
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="/requirements/sqlite">
+          <img src="https://raw.githubusercontent.com/lecaillon/Evolve/master/images/sqlite.png" style="margin: 0rem auto">
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="/requirements/mysql">
+          <img src="https://raw.githubusercontent.com/lecaillon/Evolve/master/images/mysql.png" style="margin: 0rem auto">
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="/requirements/mariadb">
+          <img src="https://raw.githubusercontent.com/lecaillon/Evolve/master/images/mariadb.png" style="margin: 0rem auto">
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="/requirements/cassandra">
+          <img src="https://raw.githubusercontent.com/lecaillon/Evolve/master/images/cassandra.png" style="margin: 0rem auto">
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="/requirements/cockroachdb">
+          <img src="https://raw.githubusercontent.com/lecaillon/Evolve/master/images/cockroachdb.png" style="margin: 0rem auto">
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,9 +1,9 @@
 ---
 title: "SQLite"
 draft: false
-weight: 2
+weight: 3
 icon: "/images/SQLite.png"
 ---
 
-### Versions
+#### Versions
 - SQLite3
