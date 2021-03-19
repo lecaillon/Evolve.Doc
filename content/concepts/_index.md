@@ -30,11 +30,11 @@ It is composed of a **version**, an informative **description** and a **checksum
 
 <i class="far fa-hand-point-right"></i> They are applied in the order of their versions.
 
-<i class="far fa-hand-point-right"></i> The checksum is stored in the Evolve metadata table and used to detect accidental changes.
+<i class="far fa-hand-point-right"></i> The checksum is stored in the Evolve metadata table and used to detect inadvertent changes.
 
 #### Repeatable migration
 
-The repeatable migration is applied whenever its content changes. It does not have a version and is executed sorted by name after all pending versioned migrations. You can use them to manage database objects you can create or update, such as views and stored procedures, or to insert seed data that can evolve and grow over time. Repeatable migrations must follow this file [name structure](/configuration/naming): **R__Create_views.sql**:
+The repeatable migration is applied whenever its content changes. It does not have a version and is executed sorted by name after all pending versioned migrations. You can use them to manage in a single file, database objects you can **create or update**, such as views and stored procedures, or to insert seed data that can evolve and grow over time. Repeatable migrations must follow this file [name structure](/configuration/naming): **R__Create_views.sql**:
 
 <i class="fas fa-info-circle"></i> A repeatable migration is executed each time its content (checksum) changes.
 
@@ -58,7 +58,7 @@ Evolve has 4 execution commands to interact with your database:
 
 By default, each migration is executed in a separate database transaction. Thus each script will either succeed or fail completely and Evolve will stop on the first error. If your database supports DDL statements within a transaction, failed migrations will always be rolled back, otherwise you will have to manually fix your database state.
 
-You can also wrap all your migrations in a single transaction using the option `TransactionMode` with the value `CommitAll` to commit a group of script if they all succeed, or rollback them all if one fails.
+Alternatively, you can also wrap all your migrations in a single transaction using the option `TransactionMode` with the value `CommitAll` to commit a group of script if they all succeed, or rollback them all if one fails.
 
 #### Placeholders
 
