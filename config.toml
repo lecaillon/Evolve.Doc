@@ -2,6 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Evolve"
 theme = "hugo-theme-learn"
+googleAnalytics = "UA-115057388-1"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
@@ -22,7 +23,6 @@ disableBreadcrumb = true
 disableLandingPageButton = true
 disableLanguageSwitchingButton = true
 disableMermaid = true
-googleAnalytics = "UA-115057388-1"
 
 [[Languages.en.menu.shortcuts]]
 name = "<i class='far fa-heart' style='color:HotPink'></i> Sponsor"
