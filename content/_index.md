@@ -28,12 +28,12 @@ With your help, I can focus on open-source work more and make it sustainable. If
     <tr>
       <td align="center" valign="middle">
         <a href="https://www.veepee.com">
-          <img src="/images/Veepee.svg" style="margin: 0rem auto">
+          <img src="https://raw.githubusercontent.com/lecaillon/Evolve.Doc/master/static/images/Veepee.svg" style="margin: 0rem auto">
         </a>
       </td>
       <td align="center" valign="middle">
         <a href="https://megaslice.uk">
-          <img src="/images/Megaslice.png" style="margin: 0rem auto">
+          <img src="https://raw.githubusercontent.com/lecaillon/Evolve.Doc/master/static/images/Megaslice.png" style="margin: 0rem auto">
         </a>
       </td>
     </tr>
