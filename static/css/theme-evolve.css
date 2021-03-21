@@ -121,3 +121,15 @@ h1.header-image span.header-title {
     vertical-align: middle; 
     display: table-cell;
 }
+
+.label {
+	padding: .2em .6em .3em;
+	font-size: 75%;
+	border-radius: .25em;
+	color:white;
+}
+
+.label-new {
+	background:#1C90F3;
+	margin-left: 8px;
+}
