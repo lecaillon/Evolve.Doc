@@ -41,7 +41,7 @@ url = "https://twitter.com/evolve_db"
 weight = 30
 
 [[Languages.en.menu.shortcuts]] 
-name = "<i class='fab fa-github'></i> Github"
+name = "<i class='fab fa-github'></i> GitHub"
 identifier = "ds"
 url = "https://github.com/lecaillon/Evolve"
 weight = 40
